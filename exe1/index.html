@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myMovies">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="myMovies.js"></script>
+</head>
+<style>
+  img{
+    width:100px;
+    height: auto;
+  }
+  .card{
+    border: 1px solid;
+    border-color: #000;
+  }
+</style>
+<body>
+  <section ng-controller="moviesController as movie">
+    <div class="card" ng-repeat="item in movie.name">
+      <ng-src="{{ item.image }}" alt="">
+      {{ item.nombre}}
+      <span ng-repeat=" actor in item.actores ">{{actor.name}}</span>
+      {{ item.anio }}
+      {{ item.genero }}
+    </div>
+  </section>
+
+</body>
+</html>

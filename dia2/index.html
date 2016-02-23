@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="myapp.js"></script>
+</head>
+<body>
+
+
+  <div ng-controller="mycontroller as first">
+    <p>{{first.name}}</p>
+    <p>{{first.number}} + 1 = {{first.number + 1 }}</p>
+    <p>{{first.number}} / 2 = {{first.number/ 2}}</p>
+    <p>{{first}}</p>
+
+    <ejemplo></ejemplo>
+    <ejemplo></ejemplo>
+
+    <imagen></imagen>
+
+    <button ng-click="first.clickeame()">Clickeame</button>
+    <button ng-click="first.clickdos()">Clickdos</button>
+    <ul>
+      <li><input type="text" ng-model="search.age"></li>
+      <li ng-repeat=" person in first.people | filter: search" ng-if="person.age >= 20">
+        {{$index +1}} {{person.name}} tiene {{person.age}} vive en {{person.place}}
+        <button type="button" name="button" ng-click="first.addage(person)">ADD</button>
+      </li>
+    </ul>
+  </div>
+
+
+  <div ng-controller="otherController as other">
+    <br>
+    {{other.name}}
+  </div>
+
+</body>
+</html>
