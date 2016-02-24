@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  angular.module("youtube",['ngResource'])
+  angular.module("youtube",[])
   .directive("youtubePlayer", youtubePlayer);
 
 
@@ -15,18 +15,12 @@
     };
     return directive;
   }
-
-  function sce(){
-    var sce = this;
-    sce.url = "https://www.youtube.com/watch?v=kIVd9uTlS-Q";
-
-  }
   youtubeController.$inject = ["$sce"];
   function youtubeController($sce){
     var youtube = this;
+    youtube.id = "kIVd9uTlS-Q";
     youtube.text = "hola";
-    youtube.url = $sce.trustAsResourceUrl("https://www.youtube.com/watch?v=kIVd9uTlS-Q");
-
+    youtube.url = $sce.trustAsResourceUrl("https://www.youtube.com/embed/"+youtube.id);
   }
 
 })();
