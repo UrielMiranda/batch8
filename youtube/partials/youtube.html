@@ -1,3 +1,8 @@
 <div>
-  <iframe width="560" height="315" ng-src="{{youtube.url}}" frameborder="0" allowfullscreen ></iframe>
+  <form ng-submit="youtube.search()">
+    <input ng-model="id">
+    {{ngModel}}
+    <button>Buscar</button>
+  </form>
+  <iframe width="560" height="315" ng-src="{{youtube.url}}" frameborder="0" allowfullscreen></iframe>
 </div>

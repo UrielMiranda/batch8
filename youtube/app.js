@@ -21,6 +21,7 @@
     youtube.id = "kIVd9uTlS-Q";
     youtube.text = "hola";
     youtube.url = $sce.trustAsResourceUrl("https://www.youtube.com/embed/"+youtube.id);
+
   }
 
 })();
